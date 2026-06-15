@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Cyber Kill Chain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    background-color: #000000;
+    color: #fd8516;
+    box-sizing: border-box;
+    }
+a:link, a:visited {
+    color: #fd8516;
+    }
+a:active, a:hover {
+    color: #ffffff;
+    }
+.container {
+    max-width: 600px;
+    margin: auto;
+    }
+.content {
+    float: left;
+    padding: 10px;
+    }
+@media screen and (max-width: 600px) {
+    .content {
+        width: 100%;
+        font-size: 2vw;
+        }
+    }
+.sauce {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-width: 80ch;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="content">
+<pre>
+       ...::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::...
+       :::::                      Cyber Kill Chain                    :::::
+       ```::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::'''
+    
+<div class ="sauce">        
+The term kill chain is a military concept related to the structure of an attack. It consists of target identification, decision and order to attack the target, and finally the target destruction.
+The framework defines the steps used by adversaries or malicious actors in cyberspace. To succeed, an adversary needs to go through all phases of the Kill Chain.
+
+1. Reconnaissance
+2. Weaponization
+3. Delivery
+4. Exploitation.
+5. Installation.
+6. C2
+7. Actions on Objectives.
+
+RECONNAISSANCE
+
+Reconnaissance is the research and planning phase of an attack against a system or victim. Adversaries use this phase to gather information about their target to inform their next steps. This information can include infrastructure details, employee data, business processes, and exposed technologies. Reconnaissance is often passive and undetected.
+Reconnaissance Types :
+Active Recon: This involves direct contact with the target with activities such as social engineering, port scanning, banner grabbing, or probing for open services.
+Passive Recon: This involves having no direct interaction with the target. This may include WHOIS lookups, social media scraping, or reviewing breach data.
+
+WEAPONIZATION
+
+In this phase adversary turn the raw information into actionable attack tools through crafting malware and exploits into a payload like :
+
+– Creating an infected Microsoft Office document containing a malicious macros or VBA (Visual Basic for Applications) scripts.
+– Creating a malicious payload or a very sophisticated worm, implant it on USB drives, and then distribute them in public.
+– Set up Command and Control (C2) infrastructure for execution of command or deliver more payloads.
+– Infect the victim’s host with a backdoor for system access and bypass security.
+– Tailoring phishing templates
+
+DELIVERY
+
+Method for transmitting the payload or the malware onto the target environment using phishing emails, USB drops, Watering hole attacks where the adversary try to compromise the website targets are usually visiting subsequently redirecting them to a malicious website of the attacker’s choice or creation resulting into a drive-by download.
+
+EXPLOITATION
+
+Execution of exploit on target machine.
+Adversary can achieve this using techniques like:
+Malicious macro execution
+Zero-day exploits
+Known CVEs
+
+As Blue Team, Signs of exploitation could be :
+Unexpected process spawns
+Registry changes or new services creations
+Suspicious command-line arguments
+
+INSTALLATION
+
+To maintain access to the compromised host, attacker needs to install a persistent backdoor. This can be achieved through methods like Installing a web shell on the webserver, Installing a backdoor on the victim’s machine using meterpreter, Creating or modifying Windows, Adding the entry to the “run keys” for the malicious payload in the Registry or the Startup Folder which would execute the payload each time the user logs in.
+
+C2
+
+After persistence and execution, adversary opens up the C2 channel to remotely control the victim or pass malicious communication via C2 beaconing which will enable consistent communication with the C2 server.
+However, IRC (Internet Relay Chat) was the traditional C2 channel and modern security solutions can easily detect malicious IRC traffic.
+The most common C2 channels include:
+HTTP on port 80 and HTTPs on 443
+DNS Tunneling
+
+ACTIONS ON OBJECTIVE [EXFIL]
+
+Collect the credentials.
+Perform privilege escalation.
+Lateral movement.
+Deleting the backups.
+Overwrite or corrupt data.
+</pre>
+
+</div></div></div></body></html>
